@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>GuiLog | Entregas</title>
+
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <header class="page-header">
+        <div class="brand-container">
+  <img src="/logo.png" alt="" class="brand-logo" />
+  <span class="brand">Guilog</span>
+   <p>Acompanhe suas entregas em um só lugar.</p>
+</div>
+       
+      </header>
+
+      <!-- LOGIN -->
+      <section id="login-section" class="card">
+        <h1>Acesse sua conta</h1>
+        <p>Informe seus dados para continuar.</p>
+
+        <form id="login-form">
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="voce@exemplo.com"
+              autocomplete="username"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="password">Senha</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Sua senha"
+              autocomplete="current-password"
+              minlength="6"
+              required
+            />
+          </div>
+
+          <button type="submit">Entrar</button>
+
+          <button
+            id="show-register-button"
+            class="button-secondary"
+            type="button"
+          >
+            Criar uma conta
+          </button>
+        </form>
+
+        <p id="login-message" class="message" role="status"></p>
+      </section>
+
+      <!-- CADASTRO DE USUÁRIO -->
+      <section id="register-section" class="card" hidden>
+        <h1>Crie sua conta</h1>
+        <p>Cadastre-se para solicitar e acompanhar entregas.</p>
+
+        <form id="register-form">
+          <div class="field">
+            <label for="register-name">Nome</label>
+            <input
+              id="register-name"
+              name="name"
+              type="text"
+              placeholder="Seu nome"
+              autocomplete="name"
+              minlength="3"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="register-email">E-mail</label>
+            <input
+              id="register-email"
+              name="email"
+              type="email"
+              placeholder="voce@exemplo.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="register-password">Senha</label>
+            <input
+              id="register-password"
+              name="password"
+              type="password"
+              placeholder="No mínimo 6 caracteres"
+              autocomplete="new-password"
+              minlength="6"
+              required
+            />
+          </div>
+
+          <button type="submit">Cadastrar</button>
+
+          <button
+            id="back-login-button"
+            class="button-secondary"
+            type="button"
+          >
+            Voltar para o login
+          </button>
+        </form>
+
+        <p id="register-message" class="message" role="status"></p>
+      </section>
+
+      <!-- ÁREA DE ENTREGAS -->
+      <section id="dashboard-section" hidden>
+        <div class="dashboard-header">
+          <div>
+            <h1>Entregas</h1>
+            <p id="user-info"></p>
+          </div>
+
+          <button
+            id="logout-button"
+            class="button-secondary"
+            type="button"
+          >
+            Sair
+          </button>
+        </div>
+
+        <section id="create-delivery-section" class="card" hidden>
+          <h2>Nova entrega</h2>
+
+          <form id="delivery-form">
+            <div class="field">
+              <label for="description">Descrição</label>
+              <textarea
+                id="description"
+                name="description"
+                placeholder="Descreva o que será entregue"
+                maxlength="255"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit">Cadastrar entrega</button>
+          </form>
+
+          <p id="delivery-message" class="message" role="status"></p>
+        </section>
+
+        <section class="card">
+          <div class="list-header">
+            <h2>Lista de entregas</h2>
+
+            <button
+              id="refresh-button"
+              class="button-secondary"
+              type="button"
+            >
+              Atualizar
+            </button>
+          </div>
+
+          <p id="list-message" class="message" role="status"></p>
+          <div id="deliveries-list" class="deliveries-list"></div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
