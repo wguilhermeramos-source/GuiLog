@@ -9,7 +9,7 @@
     "dev": "tsx watch --env-file .env src/server.ts",
     "test:dev": "jest --watchAll --runInBand",
     "build": "tsup src --out-dir build",
-    "start": "node --env-file=.env build/server.js "
+    "start": "node build/server.js"
   },
   "author": "Walace Ramos",
   "license": "ISC",
